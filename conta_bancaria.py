@@ -26,9 +26,10 @@ while True:
         deposito = float(input('Qual valor você quer depositar? '))
         if deposito > 0:
             depositos.append(deposito)
+            print('Depósito efetuado com sucesso!')
             saldo += deposito
         else:
-            print('saldo insuficiente')
+            print('Valor insuficiente para depósito, tente um valor acima de 0!')
 
 
     elif opcao == 's':
@@ -44,6 +45,7 @@ while True:
 
         else:
             saques.append(saque)
+            print('Saque efetuado com sucesso!')
             saldo -= saque
             numero_saques += 1
             numero_saques_restantes -= 1
@@ -51,9 +53,8 @@ while True:
 
     elif opcao == 'e':
 
-
-        print('Exibindo Extrato: ')
         print('=-' * 63)
+        print(' ' * 15 + 'Exibindo Extrato:')
         print(f'Depósitos realizados:     =>', end=' ')
         for i in depositos:
             print(f'R$ {i:.2f}, ', end=' ')
